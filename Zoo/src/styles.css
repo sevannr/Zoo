@@ -1,1 +1,9 @@
-/* You can add global styles to this file, and also import other style files */
+.jumbotron {
+    padding: 1em;
+    border-radius: 1em;
+    box-shadow: 1em 1em 1.5em #ccc;
+}
+
+.nav-item .active {
+    border-bottom: 0.1em solid #eee;
+}
