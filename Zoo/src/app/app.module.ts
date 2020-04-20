@@ -4,9 +4,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { EditorModule, TINYMCE_SCRIPT_SRC } from '@tinymce/tinymce-angular';
 import { FormsModule } from '@angular/forms';
 
-// Routing
-// import { routing, appRoutingPrividers } from './app-routing';
+// Modules
+import { EmailModule } from './modules/email.module';
 
+// Components
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { AnimalsComponent } from './components/animals/animals.component';
@@ -27,6 +28,7 @@ import { StoreComponent } from './components/store/store.component';
     AppRoutingModule,
     BrowserModule,
     EditorModule,
+    EmailModule,
     FormsModule
   ],
   providers: [ { provide: TINYMCE_SCRIPT_SRC, useValue: 'tinymce/tinymce.min.js' }],
