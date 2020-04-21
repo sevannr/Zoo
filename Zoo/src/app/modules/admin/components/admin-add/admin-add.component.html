@@ -1,0 +1,23 @@
+<h4>{{title}}</h4>
+
+<form>
+    <div class="form-group">
+        <label>Name</label>
+        <input class="form-control" type="text" />
+    </div>
+
+    <div class="form-group">
+        <label>Year</label>
+        <input class="form-control" type="number" min="2000" [max]="maxYear" />
+    </div>
+
+    <div class="form-group">
+        <label>Description</label>
+        <textarea class="form-control"></textarea>
+    </div>
+
+    <div class="form-group center">
+        <button class="btn btn-default btn-lg" [routerLink]="['list']">Cancel</button>
+        <input type="submit" class="btn btn-success btn-lg" value="Save" />
+    </div>
+</form>

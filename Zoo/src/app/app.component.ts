@@ -1,17 +1,16 @@
-import { Component, DoCheck, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements DoCheck, OnInit {
+export class AppComponent {
 
   emailContact: string;
   emailContactString = 'emailContact';
   title = `Sevann's Zoo`;
   
-  // missing to fix the icon property
   routes = [
     {
       icon: 'fas fa-house-user',
@@ -39,23 +38,4 @@ export class AppComponent implements DoCheck, OnInit {
       path: '/contact'
     }
   ];
-
-  ngOnInit() {
-    this.emailContact = localStorage.getItem(this.emailContactString);
-  }
-
-  ngDoCheck() {
-    this.emailContact = localStorage.getItem(this.emailContactString);
-  }
-
-  localStorageClear() {
-    localStorage.clear();
-  }
-
-  deleteEmailcontact() {
-    localStorage.removeItem(this.emailContactString);
-    this.localStorageClear();
-
-    this.emailContact = null;
-  }
 }

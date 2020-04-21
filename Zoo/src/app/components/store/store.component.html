@@ -1,20 +1,35 @@
-<h4>JQuery with angular</h4>
+<div [@fadeInIn]>
 
-<button id="buttonjq">Show text</button>
-
-<br><br>
-<p id="textjq" class="alert alert-warning">
-    This is a simple hero unit, a simple jumbotron-style component for callig extra attention to featured content or information
-</p>
-
-<div id="box" style="width: 50px; height: 150px; border: 1px solid black;">
-    al fdjaklsdfj asldfjasdlfjasdlfjasldfjlsadjflasdjflsajfdlasjdflkajdlfkjasdlfjalsdfjalsdfjlasjdflasdjflasdjflasjdlfjasdlfjalsdjflasdjflasjflsadjflasjflasjfljasdldfasfa af afd adfa fa kfdj asd ldfjlaksj fjasdf dlj asdlf jasslfjaslfj aslsfjass
-</div>
+    <a class="btn_active btn btn-success btn-lg" [@mark]="status" (click)="changeState()">
+        <span *ngIf="status else inactive">Active</span>
+        <ng-template #inactive>Inactive</ng-template>
+    </a>
 
 
+    <hr>
+    <hr>
+    <hr>
+    <hr>
+    <hr>
+    <hr>
 
-<h1>TinyMCE 5 Angular Demo</h1>
-<editor apiKey="your-api-key" [init]="{
+    <h4>JQuery with angular</h4>
+
+    <button id="buttonjq">Show text</button>
+
+    <br><br>
+    <p id="textjq" class="alert alert-warning">
+        This is a simple hero unit, a simple jumbotron-style component for callig extra attention to featured content or information
+    </p>
+
+    <div id="box" style="width: 50px; height: 150px; border: 1px solid black;">
+        al fdjaklsdfj asldfjasdlfjasdlfjasldfjlsadjflasdjflsajfdlasjdflkajdlfkjasdlfjalsdfjalsdfjlasjdflasdjflasdjflasjdlfjasdlfjalsdjflasdjflasjflsadjflasjflasjfljasdldfasfa af afd adfa fa kfdj asd ldfjlaksj fjasdf dlj asdlf jasslfjaslfj aslsfjass
+    </div>
+
+
+
+    <h1>TinyMCE 5 Angular Demo</h1>
+    <editor apiKey="your-api-key" [init]="{
      height: 500,
      menubar: false,
      plugins: [
@@ -27,3 +42,4 @@
        alignleft aligncenter alignright alignjustify | \
        bullist numlist outdent indent | removeformat | help'
    }"></editor>
+</div>

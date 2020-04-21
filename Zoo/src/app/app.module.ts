@@ -3,9 +3,11 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { EditorModule, TINYMCE_SCRIPT_SRC } from '@tinymce/tinymce-angular';
 import { FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 // Modules
-import { EmailModule } from './modules/email.module';
+import { EmailModule } from './modules/email/email.module';
+import { AdminModule } from './modules/admin/admin.module';
 
 // Components
 import { AppComponent } from './app.component';
@@ -25,8 +27,10 @@ import { StoreComponent } from './components/store/store.component';
     StoreComponent
   ],
   imports: [
+    AdminModule,
     AppRoutingModule,
     BrowserModule,
+    BrowserAnimationsModule,
     EditorModule,
     EmailModule,
     FormsModule

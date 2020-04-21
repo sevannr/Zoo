@@ -1,0 +1,19 @@
+<div class="container-fluid">
+    <div class="col-12 mt-4">
+        <div class="col-lg-3 col-md-3 col-sm-3">
+            <h3>{{title}}</h3>
+
+            <div class="sidebar-admin" data-example-id="sample-nav-stacked">
+                <ul class="nav flex-column nav-pills">
+                    <li class="nav-item" role="presentation" *ngFor="let route of routes">
+                        <a class="nav-link" [routerLink]="[route.path]" [routerLinkActive]="['active']">{{route.message}}</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="col-lg-9 col-md-9 col-sm-9">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>
