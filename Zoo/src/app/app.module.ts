@@ -16,6 +16,8 @@ import { AnimalsComponent } from './components/animals/animals.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { KeepersComponent } from './components/keepers/keepers.component';
 import { StoreComponent } from './components/store/store.component';
+import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { StoreComponent } from './components/store/store.component';
     AnimalsComponent,
     ContactComponent,
     KeepersComponent,
-    StoreComponent
+    StoreComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     AdminModule,

@@ -5,6 +5,8 @@ import { AnimalsComponent } from './components/animals/animals.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { HomeComponent } from './components/home/home.component';
 import { KeepersComponent } from './components/keepers/keepers.component';
+import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
 import { StoreComponent } from './components/store/store.component';
 
 const routes: Routes = [
@@ -14,6 +16,8 @@ const routes: Routes = [
   { path: 'contact', component: ContactComponent},
   { path: 'home', component: HomeComponent },
   { path: 'keepers', component: KeepersComponent},
+  { path: 'login', component: LoginComponent},
+  { path: 'register', component: RegisterComponent},
   { path: 'store', component: StoreComponent},
   { path: '**', component: HomeComponent }
 ];

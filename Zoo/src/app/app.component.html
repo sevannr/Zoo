@@ -297,7 +297,9 @@
     }
 </style>
 <nav class="navbar navbar-expand-sm primary bg-dark navbar-dark">
-    <a class="navbar-brand" [routerLink]="['/']">{{title}}</a>
+    <a class="navbar-brand" [routerLink]="['/']" style="text-decoration: none; color: white">
+        <strong>{{title}}</strong>
+    </a>
 
     <!-- Links -->
     <ul class="navbar-nav collapse navbar-collapse">
@@ -305,6 +307,20 @@
             <a class="nav-link" [routerLink]="[route.path]" [routerLinkActive]="['active']">
                 <i class="{{route.icon}}" style="color: #888; margin-right: 4px;"></i>
                 <span>{{route.name}}</span>
+            </a>
+        </li>
+    </ul>
+
+
+    <ul class="navbar-nav navbar-right">
+        <li>
+            <a class="nav-link" [routerLink]="['/register']" [routerLinkActive]="['active']">
+                <span class="fas fa-user"></span> Register
+            </a>
+        </li>
+        <li>
+            <a class="nav-link" [routerLink]="['/login']" [routerLinkActive]="['active']">
+                <span class="fas fa-sign-in-alt"></span> Login
             </a>
         </li>
     </ul>
