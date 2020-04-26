@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { EditorModule, TINYMCE_SCRIPT_SRC } from '@tinymce/tinymce-angular';
 import { FormsModule } from '@angular/forms';
+// import {HttpModule} from '@angular/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 // Modules
@@ -37,7 +38,8 @@ import { RegisterComponent } from './components/register/register.component';
     BrowserAnimationsModule,
     EditorModule,
     EmailModule,
-    FormsModule
+    FormsModule,
+    // HttpModule
   ],
   providers: [ { provide: TINYMCE_SCRIPT_SRC, useValue: 'tinymce/tinymce.min.js' }],
   bootstrap: [AppComponent]

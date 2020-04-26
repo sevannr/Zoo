@@ -1,8 +1,15 @@
 <div [@fadeInIn] class="col-lg-6 col-md-6">
     <h1>{{title}}</h1>
 
+    <div *ngIf="message" id="alertMessage">
+        <div class="alert alert-success" *ngIf="status else alertError">{{message}}</div>
+        <ng-template #alertError>
+            <div class="alert alert-danger">{{message}}</div>
+        </ng-template>
+    </div>
+
     <div>
-        <form #registerForm="ngForm" (ngSubmit)="onSubmit()">
+        <form #registerForm="ngForm" (ngSubmit)="onSubmit(registerForm)">
             <div class="control-group mt-2">
                 <label for="name"><strong>Name</strong></label>
                 <input type="text" id="name" name="name" #name="ngModel" [(ngModel)]="user.name" class="form-control" placeholder="Your name" required />
