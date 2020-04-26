@@ -46,7 +46,7 @@ export class RegisterComponent implements OnInit {
           this.clearUser();
           registerForm.reset();
         } else {
-          this.showAlertMessage(`An error has occurred while registration: ${this.message}`);
+          this.showAlertMessage(`An error has occurred while registration: ${response.message}`);
         }
       },
       error => {

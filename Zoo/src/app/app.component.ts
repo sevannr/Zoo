@@ -1,14 +1,17 @@
-import { Component } from '@angular/core';
+import { Component, DoCheck, OnInit } from '@angular/core';
+import { UserService } from './services/user.service';
+import { Router, ActivatedRoute, Params} from '@angular/router';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements DoCheck, OnInit {
 
-  emailContact: string;
-  emailContactString = 'emailContact';
+  // emailContact: string;
+  // emailContactString = 'emailContact';
+  identity: any;
   title = `Sevann's Zoo`;
   
   routes = [
@@ -38,4 +41,22 @@ export class AppComponent {
       path: '/contact'
     }
   ];
+
+  constructor(private router: Router, private userService: UserService) {
+
+  }
+
+  ngDoCheck() {
+    this.identity = this.userService.getIdentity();
+  }
+
+  ngOnInit() {
+    this.identity = this.userService.getIdentity();
+  }
+
+  logout() {
+    localStorage.clear();
+    this.identity = null;
+    this.router.navigate(['/']);
+  }
 }

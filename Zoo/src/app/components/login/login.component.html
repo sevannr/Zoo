@@ -1,3 +1,33 @@
-<div [@fadeInIn]>
+<div [@fadeInIn] class="col-lg-6 col-md-6">
     <h1>{{title}}</h1>
+
+    <div *ngIf="message" id="alertMessage">
+        <div class="alert alert-danger">{{message}}</div>
+    </div>
+
+    <div>
+        <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)">
+            <div class="control-group mt-2">
+                <label for="email"><strong>Email</strong></label>
+                <input type="email" id="email" name="email" #email="ngModel" [(ngModel)]="user.email" class="form-control" placeholder="Your email" required />
+                <span *ngIf="!email.valid && email.touched" class="text-danger">
+                    Email field is mandatory
+                </span>
+            </div>
+
+            <div class="control-group mt-2">
+                <label for="password"><strong>Password</strong></label>
+                <input type="password" id="password" name="password" #password="ngModel" [(ngModel)]="user.password" class="form-control" placeholder="Your password" required />
+                <span *ngIf="!password.valid && password.touched" class="text-danger">
+                    Password field is mandatory
+                </span>
+            </div>
+
+            <div class="mt-4" style="text-align: center;">
+                <button class="btn btn-light mr-2" [routerLink]="['/']">Cancel</button>
+                <input type="submit" class="btn btn-success" value="Login" [disabled]="!loginForm.form.valid" />
+            </div>
+        </form>
+    </div>
+
 </div>
