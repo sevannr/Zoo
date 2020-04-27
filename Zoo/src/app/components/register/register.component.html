@@ -8,45 +8,42 @@
         </ng-template>
     </div>
 
-    <div>
-        <form #registerForm="ngForm" (ngSubmit)="onSubmit(registerForm)">
-            <div class="control-group mt-2">
-                <label for="name"><strong>Name</strong></label>
-                <input type="text" id="name" name="name" #name="ngModel" [(ngModel)]="user.name" class="form-control" placeholder="Your name" required />
-                <span *ngIf="!name.valid && name.touched" class="text-danger">
+    <form #registerForm="ngForm" (ngSubmit)="onSubmit(registerForm)">
+        <div class="control-group mt-2">
+            <label for="name"><strong>Name</strong></label>
+            <input type="text" id="name" name="name" #name="ngModel" [(ngModel)]="user.name" class="form-control" placeholder="Your name" required />
+            <span *ngIf="!name.valid && name.touched" class="text-danger">
                     Name field is mandatory
                 </span>
-            </div>
+        </div>
 
-            <div class="control-group mt-2">
-                <label for="surname"><strong>Surname</strong></label>
-                <input type="text" id="surname" name="surname" #surname="ngModel" [(ngModel)]="user.surname" class="form-control" placeholder="Your surname" required />
-                <span *ngIf="!surname.valid && surname.touched" class="text-danger">
+        <div class="control-group mt-2">
+            <label for="surname"><strong>Surname</strong></label>
+            <input type="text" id="surname" name="surname" #surname="ngModel" [(ngModel)]="user.surname" class="form-control" placeholder="Your surname" required />
+            <span *ngIf="!surname.valid && surname.touched" class="text-danger">
                     Surname field is mandatory
                 </span>
-            </div>
+        </div>
 
-            <div class="control-group mt-2">
-                <label for="email"><strong>Email</strong></label>
-                <input type="email" id="email" name="email" #email="ngModel" [(ngModel)]="user.email" class="form-control" placeholder="Your email" required />
-                <span *ngIf="!email.valid && email.touched" class="text-danger">
+        <div class="control-group mt-2">
+            <label for="email"><strong>Email</strong></label>
+            <input type="email" id="email" name="email" #email="ngModel" [(ngModel)]="user.email" class="form-control" placeholder="Your email" required />
+            <span *ngIf="!email.valid && email.touched" class="text-danger">
                     Email field is mandatory
                 </span>
-            </div>
+        </div>
 
-            <div class="control-group mt-2">
-                <label for="password"><strong>Password</strong></label>
-                <input type="password" id="password" name="password" #password="ngModel" [(ngModel)]="user.password" class="form-control" placeholder="Your password" required />
-                <span *ngIf="!password.valid && password.touched" class="text-danger">
+        <div class="control-group mt-2">
+            <label for="password"><strong>Password</strong></label>
+            <input type="password" id="password" name="password" #password="ngModel" [(ngModel)]="user.password" class="form-control" placeholder="Your password" required />
+            <span *ngIf="!password.valid && password.touched" class="text-danger">
                     Password field is mandatory
                 </span>
-            </div>
+        </div>
 
-            <div class="mt-4" style="text-align: center;">
-                <button class="btn btn-light mr-2" [routerLink]="['/']">Cancel</button>
-                <input type="submit" class="btn btn-success" value="Register" [disabled]="!registerForm.form.valid" />
-            </div>
-        </form>
-    </div>
-
+        <div class="mt-4 center">
+            <button class="btn btn-light mr-2" [routerLink]="['/']">Cancel</button>
+            <input type="submit" class="btn btn-success" value="Register" [disabled]="!registerForm.form.valid" />
+        </div>
+    </form>
 </div>

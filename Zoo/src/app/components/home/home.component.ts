@@ -9,7 +9,7 @@ import { fadeIn } from './../animation';
 })
 export class HomeComponent implements OnInit {
 
-  title = `Werlcome to Sevann's Zoo`;
+  title = `Welcome to Sevann's Zoo`;
   constructor() { }
 
   ngOnInit(): void {

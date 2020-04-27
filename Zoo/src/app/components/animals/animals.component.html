@@ -1,3 +1,33 @@
-<div [@fadeInIn]>
-    <h1>{{title}}</h1>
+<div [@fadeInIn] class="col-md-12">
+    <h4>{{title}}</h4>
+    <table class="table table-hover">
+        <thead class="default">
+            <tr>
+                <th></th>
+                <th>Name</th>
+                <th>Year</th>
+                <!-- <th>Actions</th> -->
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let animal of animals">
+                <td>
+                    <img src="{{url + 'animals/imageFile/' + animal.image}}" width="150px" *ngIf="animal.image && animal.image != ''" />
+                </td>
+                <td>{{animal.name}}</td>
+                <td>{{animal.year}}</td>
+                <!-- <td>
+                    <button class="btn btn-primary btn-sm">
+                        <span class="fas fa-list" title="View"> </span>
+                    </button>
+                    <button class="btn btn-warning btn-sm ml-2 mr-2">
+                        <span style="color: white;" class="fas fa-edit" title="Edit"> </span>
+                    </button>
+                    <button class="btn btn-danger btn-sm">
+                        <span class="fas fa-trash" title="Delete"></span>
+                    </button>
+                </td> -->
+            </tr>
+        </tbody>
+    </table>
 </div>

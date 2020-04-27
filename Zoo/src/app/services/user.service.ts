@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Http, Response, Headers } from '@angular/http';
 import { map } from 'rxjs/operators';
-import { Observable } from 'rxjs';
 import { GLOBAL } from './global';
 
 
@@ -11,8 +10,6 @@ import { GLOBAL } from './global';
 
 export class UserService {
 
-  // identity: any;
-  // token: any;
   url: string;
 
   constructor(private http: Http) {
@@ -28,7 +25,6 @@ export class UserService {
     const token = localStorage.getItem('token');
     return token !== undefined ? token : null;
   }
-
 
   login(user, gettoken = null) {
     if(gettoken != null) {

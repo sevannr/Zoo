@@ -1,9 +1,9 @@
 export class Animal{
 
     constructor(
-        public _id: string,
+        public id: string,
         public name: string,
-        public desciption: string,
+        public description: string,
         public year: number,
         public image: string,
         public userId: string
