@@ -36,7 +36,6 @@ export class LoginComponent implements OnInit {
       response => {
         this.status = response.isSuccess;
         this.identity = response.result;
-
         localStorage.setItem('identity', JSON.stringify(this.identity));
 
         if (response.result._id) {

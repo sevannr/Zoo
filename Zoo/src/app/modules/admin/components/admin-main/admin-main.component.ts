@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { fadeIn } from './../../../../components/animation';
 
 @Component({
   selector: 'app-admin-main',
   templateUrl: './admin-main.component.html',
-  styleUrls: ['./admin-main.component.css']
+  styleUrls: ['./admin-main.component.css'],
+  animations: [ fadeIn ]
 })
 export class AdminMainComponent implements OnInit {
 

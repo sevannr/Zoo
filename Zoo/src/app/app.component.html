@@ -330,11 +330,18 @@
             <button class="btn btn-outline-secondary dropdown-toggle" style="color: white" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               {{identity.name}}
             </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+
+            <div class="dropdown-menu" aria-labelledby="dropdownMenu">
+                <a [routerLink]="['/admin-panel']" *ngIf="identity && identity.role == ROLE_ADMIN" class="dropdown-item" style="color: black; text-decoration: none;" type="button ">
+                    <span class="fas fa-user-shield mr-2 "></span>Admin
+                </a>
+
                 <a [routerLink]="['/users']" class="btn dropdown-item" type="button" style="color: black; text-decoration: none;">
                     <span class="fas fa-cog mr-2 "></span>Profile
                 </a>
+
                 <div class="dropdown-divider "></div>
+
                 <a (click)="logout()" class="dropdown-item" style="color: black; text-decoration: none;" type="button ">
                     <span class="fas fa-sign-out-alt mr-2 "></span>Logout
                 </a>
