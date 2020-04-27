@@ -8,6 +8,7 @@ import { KeepersComponent } from './components/keepers/keepers.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { StoreComponent } from './components/store/store.component';
+import { UsersComponent } from './components/users/users.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -19,6 +20,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent},
   { path: 'register', component: RegisterComponent},
   { path: 'store', component: StoreComponent},
+  { path: 'users', component: UsersComponent},
   { path: '**', component: HomeComponent }
 ];
 

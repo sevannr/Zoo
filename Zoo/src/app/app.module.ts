@@ -19,6 +19,7 @@ import { KeepersComponent } from './components/keepers/keepers.component';
 import { StoreComponent } from './components/store/store.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
+import { UsersComponent } from './components/users/users.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { RegisterComponent } from './components/register/register.component';
     KeepersComponent,
     StoreComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    UsersComponent
   ],
   imports: [
     AdminModule,
