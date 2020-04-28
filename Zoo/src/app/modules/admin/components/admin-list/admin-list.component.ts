@@ -16,6 +16,7 @@ import { constants } from 'buffer';
 export class AdminListComponent implements OnInit {
 
   animals: any;
+  search: string;
   title = `List`;
   token: string;
 

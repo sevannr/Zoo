@@ -24,7 +24,6 @@ export class AnimalsComponent implements OnInit {
     this.animalsService.getAnimals().subscribe(
       response => {
         this.animals = response.result;
-        console.log(this.animals);
       },
       error => {
         this.errorMessage = error.json().message;

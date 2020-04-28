@@ -1,6 +1,13 @@
 <div [@fadeInIn] class="col-md-12">
     <h4>{{title}}</h4>
-    <table class="table table-hover">
+
+    <div class="row">
+        <div class="col-lg-9 col-md-9">
+            <input type="text" [(ngModel)]="search" class="form-control" placeholder="Search" />
+        </div>
+    </div>
+
+    <table class="table table-hover mt-4">
         <thead class="default">
             <tr>
                 <th>Name</th>
@@ -9,7 +16,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let animal of animals">
+            <tr *ngFor="let animal of animals | search: search">
                 <td>{{animal.name}}</td>
                 <td>{{animal.year}}</td>
                 <td>
@@ -44,11 +51,6 @@
                             </div>
                         </div>
                     </div>
-
-
-
-
-
                 </td>
             </tr>
         </tbody>
