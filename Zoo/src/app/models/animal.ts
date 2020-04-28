@@ -6,7 +6,7 @@ export class Animal{
         public description: string,
         public year: number,
         public image: string,
-        public userId: string
+        public user: any
     ) {
     }
 }

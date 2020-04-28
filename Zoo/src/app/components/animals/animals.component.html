@@ -6,7 +6,7 @@
                 <th></th>
                 <th>Name</th>
                 <th>Year</th>
-                <!-- <th>Actions</th> -->
+                <th>View</th>
             </tr>
         </thead>
         <tbody>
@@ -16,17 +16,11 @@
                 </td>
                 <td>{{animal.name}}</td>
                 <td>{{animal.year}}</td>
-                <!-- <td>
-                    <button class="btn btn-primary btn-sm">
+                <td>
+                    <a class="btn btn-primary btn-sm" [routerLink]="['/animals/', animal._id]" routerLinkActive="router-link-active">
                         <span class="fas fa-list" title="View"> </span>
-                    </button>
-                    <button class="btn btn-warning btn-sm ml-2 mr-2">
-                        <span style="color: white;" class="fas fa-edit" title="Edit"> </span>
-                    </button>
-                    <button class="btn btn-danger btn-sm">
-                        <span class="fas fa-trash" title="Delete"></span>
-                    </button>
-                </td> -->
+                    </a>
+                </td>
             </tr>
         </tbody>
     </table>

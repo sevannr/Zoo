@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Http, Response, Headers } from '@angular/http';
+import { RequestOptions, Request, RequestMethod, Headers, Http } from '@angular/http';
 import { map } from 'rxjs/operators';
 import { GLOBAL } from './global';
 
@@ -22,6 +22,21 @@ export class AnimalsService {
     });
 
     return this.http.post(`${this.url}animals`, params, {headers}).pipe(map(res => res.json()));
+  }
+
+  deleteAnimal(token, animalId) {
+    const headers = new Headers({
+      'Content-Type': 'application/json',
+      Authorization: token
+    });
+
+    const options = new RequestOptions({headers});
+
+    return this.http.delete(`${this.url}animals/${animalId}`, options).pipe(map(res => res.json()));
+  }
+
+  getAnimal(animalId) {
+    return this.http.get(`${this.url}animals/${animalId}`).pipe(map(res => res.json()));
   }
 
   getAnimals() {

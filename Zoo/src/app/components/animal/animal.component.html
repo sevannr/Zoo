@@ -1,0 +1,24 @@
+<div [@fadeInIn] class="col-lg-9 col-md-9">
+    <div *ngIf="status else errorMessage">
+        <div class="card" style="width: 85%">
+            <img class="card-img-top" src="{{url + 'animals/imageFile/' + animal.image}}" width="80%" alt="{{animal.name}}" *ngIf="animal.image && animal.image != ''" title="{{animal.name}}" />
+            <div class="card-body">
+                <h1 class="card-title">{{animal.name}}</h1>
+                <p class="card-text">{{animal.description}}</p>
+
+                <div class="alert alert-info">
+                    <strong>Keeper: </strong>
+                    <span>{{animal.user.name}} {{animal.user.surname}}</span>
+                </div>
+                <a [routerLink]="['/animals']" class="btn btn-primary btn-sm">Back to animals</a>
+            </div>
+        </div>
+    </div>
+
+    <ng-template #errorMessage>
+        <div class="alert alert-danger">
+            {{message}}
+        </div>
+    </ng-template>
+
+</div>

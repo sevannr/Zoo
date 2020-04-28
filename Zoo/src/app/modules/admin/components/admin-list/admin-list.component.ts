@@ -1,8 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { AnimalsService } from './../../../../services/animals.service';
+import { UserService } from './../../../../services/user.service';
+import { Constants } from './../../../../constants/constants' ;
 
 import { fadeIn } from './../../../../components/animation';
 import { Observable } from 'rxjs';
+import { constants } from 'buffer';
 
 @Component({
   selector: 'admin-list',
@@ -12,30 +15,41 @@ import { Observable } from 'rxjs';
 })
 export class AdminListComponent implements OnInit {
 
-
-  // animals = [
-  //   { name: 'Oso Panda', year: 2012 },
-  //   { name: 'Guepardo', year: 2014 },
-  //   { name: 'Tigre', year: 2010 },
-  //   { name: 'Pinwino', year: 2015 },
-  //   { name: 'León', year: 2012 },
-  //   { name: 'Jirafa', year: 2017 },
-  // ];
-
   animals: any;
   title = `List`;
+  token: string;
 
   constructor(private animalsService: AnimalsService) { }
 
   ngOnInit(): void {
+    this.token = localStorage.getItem(Constants.TOKEN);
+    this.getAnimals();
+  }
+
+  getAnimals() {
     this.animalsService.getAnimals().subscribe(
       response => {
         this.animals = response.result;
       },
       error => {
-
+        console.log(error.json());
       }
     );
   }
 
+  deleteAnimal(animalId) {
+    this.animalsService.deleteAnimal(this.token, animalId).subscribe(
+      response => {
+        if (!response.result) {
+          alert('Error in server');
+        } else {
+          this.getAnimals();
+        }
+
+      },
+      error => {
+        console.log(error.json());
+      }
+    );
+  }
 }

@@ -25,24 +25,6 @@ export class AnimalsComponent implements OnInit {
       response => {
         this.animals = response.result;
         console.log(this.animals);
-
-        // this.animals.map(a => {
-        //   // console.log('recorriendo');
-        //   // console.log(a);
-        //   if (a.image && a.image !== '') {
-        //     console.log('este tiene imagen')
-        //     this.animalsService.getImageFile(a.image).subscribe(
-        //       responseImage => {
-        //         console.log(responseImage);
-        //         a.image = responseImage.result.image;
-        //         console.log(a);
-        //       },
-        //       error => {
-        //         console.log(error);
-        //       }
-        //     );
-        //   }
-        // });
       },
       error => {
         this.errorMessage = error.json().message;

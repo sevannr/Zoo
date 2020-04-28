@@ -9,11 +9,13 @@ import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { StoreComponent } from './components/store/store.component';
 import { UsersComponent } from './components/users/users.component';
+import { AnimalComponent } from './components/animal/animal.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'animals', component: AnimalsComponent},
+  { path: 'animals/:animalId', component: AnimalComponent},
   { path: 'contact', component: ContactComponent},
   { path: 'home', component: HomeComponent },
   { path: 'keepers', component: KeepersComponent},
