@@ -21,6 +21,10 @@ export class UserService {
     return identity !== undefined ? identity : null;
   }
 
+  getKeeperes() {
+    return this.http.get(`${this.url}users/getKeepers`).pipe(map(res => res.json()));
+  }
+
   getToken() {
     const token = localStorage.getItem('token');
     return token !== undefined ? token : null;

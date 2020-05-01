@@ -1,3 +1,35 @@
-<div [@fadeInIn]>
-    <h1>{{title}}</h1>
+<div [@fadeInIn] class="col-md-12">
+    <h4>{{title}}</h4>
+
+    <div class="alert alert-warning" *ngIf="!keepers || keepers.length == 0 else keepersTable">
+        Not keepers found.
+    </div>
+
+    <ng-template #keepersTable>
+        <table class="table table-hover">
+            <thead class="default">
+                <tr>
+                    <th></th>
+                    <th>Name</th>
+                    <th>Surname</th>
+                    <th>Email</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let keeper of keepers">
+                    <td>
+                        <img src="{{url + 'users/imageFile/' + keeper.image}}" width="150px" *ngIf="keeper.image && keeper.image != ''" />
+                    </td>
+                    <td>{{keeper.name}}</td>
+                    <td>{{keeper.surname}}</td>
+                    <td>{{keeper.email}}</td>
+                    <!-- <td>
+                        <a class="btn btn-primary btn-sm" [routerLink]="['/animals/', animal._id]" routerLinkActive="router-link-active">
+                            <span class="fas fa-list" title="View"> </span>
+                        </a>
+                    </td> -->
+                </tr>
+            </tbody>
+        </table>
+    </ng-template>
 </div>
